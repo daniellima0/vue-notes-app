@@ -1,0 +1,79 @@
+{
+  "folders": [
+    {
+      "name": "Shopping",
+      "notes": [
+        {
+          "title": "Grocery List",
+          "content": "# Grocery List\nHere are the items to buy: Milk, Eggs, Bread, Apples, and Bananas.",
+          "lastModifiedAt": "2024-06-05"
+        },
+        {
+          "title": "Electronics",
+          "content": "# Electronics\nRemember to purchase a USB-C Cable, Wireless Mouse, and Power Bank.",
+          "lastModifiedAt": "2024-06-06"
+        },
+        {
+          "title": "Clothing",
+          "content": "# Clothing\nShopping list: Jeans, T-shirts, and Sneakers for the season.",
+          "lastModifiedAt": "2024-06-07"
+        },
+        {
+          "title": "Pharmacy",
+          "content": "# Pharmacy\nPick up Painkillers, Band-aids, and Vitamin C from the pharmacy.",
+          "lastModifiedAt": "2024-06-08"
+        },
+        {
+          "title": "Home Supplies",
+          "content": "# Home Supplies\nDon't forget Detergent, Sponges, and Trash Bags for home cleaning.",
+          "lastModifiedAt": "2024-06-09"
+        }
+      ]
+    },
+    {
+      "name": "Watch List",
+      "notes": [
+        {
+          "title": "Movies",
+          "content": "# Movies\nPlan to watch: Inception, Interstellar, and Parasite this week.",
+          "lastModifiedAt": "2024-06-10"
+        },
+        {
+          "title": "TV Shows",
+          "content": "# TV Shows\nCatch up on Breaking Bad, The Office, and Stranger Things.",
+          "lastModifiedAt": "2024-06-11"
+        },
+        {
+          "title": "Documentaries",
+          "content": "# Documentaries\nRecommended: Planet Earth and The Last Dance for insightful viewing.",
+          "lastModifiedAt": "2024-06-12"
+        },
+        {
+          "title": "YouTube Channels",
+          "content": "# YouTube Channels\nWatch new videos from Veritasium, Kurzgesagt, and MKBHD.",
+          "lastModifiedAt": "2024-06-13"
+        }
+      ]
+    },
+    {
+      "name": "Quotes",
+      "notes": [
+        {
+          "title": "Motivation",
+          "content": "# Motivation\n\"The only way to do great work is to love what you do.\" – Steve Jobs",
+          "lastModifiedAt": "2024-06-14"
+        },
+        {
+          "title": "Wisdom",
+          "content": "# Wisdom\n\"In the middle of difficulty lies opportunity.\" – Albert Einstein",
+          "lastModifiedAt": "2024-06-15"
+        },
+        {
+          "title": "Humor",
+          "content": "# Humor\n\"I'm not arguing, I'm just explaining why I'm right.\"",
+          "lastModifiedAt": "2024-06-16"
+        }
+      ]
+    }
+  ]
+}
