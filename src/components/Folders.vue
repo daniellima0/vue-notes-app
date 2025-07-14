@@ -1,12 +1,9 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import type { Folder } from '@/types/types'
 import { getFolders } from '@/services/folder-service'
+import { ref } from 'vue'
 
-let folders: Folder[] = getFolders()
-
-let foldersRef = ref(folders)
-let selectedFolder = ref<Folder>(folders[0])
+const folders = getFolders()
+const selectedFolder = ref(folders[0])
 </script>
 
 <template>
@@ -14,8 +11,8 @@ let selectedFolder = ref<Folder>(folders[0])
     <h2>Folders</h2>
     <ul id="folder-list">
       <li
-        v-for="folder in foldersRef"
-        v-on:click="selectedFolder = folder"
+        v-for="folder in folders"
+        @click="selectedFolder = folder"
         :key="folder.id"
         :class="{ active: selectedFolder.id === folder.id }"
       >
