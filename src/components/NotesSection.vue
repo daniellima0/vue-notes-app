@@ -1,9 +1,9 @@
 <template>
-  <div id="notes">Notes</div>
+  <div class="notes-section">Notes</div>
 </template>
 
 <style scoped>
-#notes {
+.notes-section {
   width: 30%;
   max-width: 390px;
   border-left: 1px solid var(--color-border);

@@ -5,7 +5,7 @@ import NoteContentSection from '@/components/NoteContentSection.vue'
 </script>
 
 <template>
-  <main id="home-view">
+  <main class="home-view">
     <FoldersSection />
     <NotesSection />
     <NoteContentSection />
@@ -13,7 +13,7 @@ import NoteContentSection from '@/components/NoteContentSection.vue'
 </template>
 
 <style scoped>
-#home-view {
+.home-view {
   display: flex;
   width: 100%;
   height: 100%;

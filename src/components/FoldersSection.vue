@@ -7,27 +7,27 @@ const selectedFolder = ref(folders[0])
 </script>
 
 <template>
-  <div id="folders">
+  <div class="folders-section">
     <h2>Folders</h2>
-    <ul id="folder-list">
+    <ul class="folder-list">
       <li
         v-for="folder in folders"
         @click="selectedFolder = folder"
         :key="folder.id"
         :class="{ active: selectedFolder.id === folder.id }"
       >
-        <div id="folder-left">
+        <div class="folder-left">
           <i class="pi pi-folder-open"></i>
           <p>{{ folder.name }}</p>
         </div>
-        <p id="notes-amount">{{ folder.notes.length }}</p>
+        <p class="notes-amount">{{ folder.notes.length }}</p>
       </li>
     </ul>
   </div>
 </template>
 
 <style scoped>
-#folders {
+.folders-section {
   padding: 0 1rem;
   width: 20%;
   max-width: 260px;
@@ -44,7 +44,7 @@ h2 {
   padding: 0 0.5rem;
 }
 
-#folder-list {
+.folder-list {
   margin: 0;
   padding: 0;
   display: flex;
@@ -66,7 +66,7 @@ li {
   background-color: var(--color-background-active);
 }
 
-#folder-left {
+.folder-left {
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -76,7 +76,7 @@ i {
   color: var(--color-yellow);
 }
 
-#notes-amount {
+.notes-amount {
   color: var(--color-text-gray);
 }
 </style>
