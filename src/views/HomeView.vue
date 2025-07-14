@@ -1,14 +1,14 @@
 <script setup lang="ts">
-import Folders from '@/components/Folders.vue'
-import Notes from '@/components/Notes.vue'
-import NoteContent from '@/components/NoteContent.vue'
+import FoldersSection from '@/components/FoldersSection.vue'
+import NotesSection from '@/components/NotesSection.vue'
+import NoteContentSection from '@/components/NoteContentSection.vue'
 </script>
 
 <template>
   <main id="home-view">
-    <Folders />
-    <Notes />
-    <NoteContent />
+    <FoldersSection />
+    <NotesSection />
+    <NoteContentSection />
   </main>
 </template>
 
