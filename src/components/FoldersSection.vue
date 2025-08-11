@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import { getFolders } from '@/services/folder-service'
-import { ref } from 'vue'
+import { useFolderStore } from '@/stores/folder'
 
 const folders = getFolders()
-const selectedFolder = ref(folders[0])
+const folderStore = useFolderStore()
+const selectedFolder = folderStore.selectedFolder
 </script>
 
 <template>
@@ -12,7 +13,7 @@ const selectedFolder = ref(folders[0])
     <ul class="folder-list">
       <li
         v-for="folder in folders"
-        @click="selectedFolder = folder"
+        @click="folderStore.selectFolder(folder)"
         :key="folder.id"
         :class="{ active: selectedFolder.id === folder.id }"
       >
