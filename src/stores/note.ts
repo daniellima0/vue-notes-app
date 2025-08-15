@@ -9,6 +9,7 @@ export const useNoteStore = defineStore('note', () => {
 
   const notes = ref(getNotesInFolder(folderStore.selectedFolder.id))
   const selectedNote = ref({} as Note)
+
   function selectNote(note: Note) {
     selectedNote.value = note
   }

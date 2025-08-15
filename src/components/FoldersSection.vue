@@ -1,14 +1,16 @@
 <script setup lang="ts">
 import { useFolderStore } from '@/stores/folder'
-import { useNoteStore } from '@/stores/note'
 import { computed } from 'vue'
+import { getNotesInFolder } from '@/services/note-service'
 
 const folderStore = useFolderStore()
-const noteStore = useNoteStore()
 
 const folders = computed(() => folderStore.folders)
 const selectedFolder = computed(() => folderStore.selectedFolder)
-const notes = computed(() => noteStore.notes)
+
+function getFolderNoteCount(folderId: string) {
+  return getNotesInFolder(folderId).length
+}
 </script>
 
 <template>
@@ -25,7 +27,8 @@ const notes = computed(() => noteStore.notes)
           <i class="pi pi-folder-open"></i>
           <p>{{ folder.name }}</p>
         </div>
-        <p class="notes-amount">{{ notes.values.length }}</p>
+        <!--? Is using directly the service instead of the store a bad practice? -->
+        <p class="notes-amount">{{ getFolderNoteCount(folder.id) }}</p>
       </li>
     </ul>
   </div>
