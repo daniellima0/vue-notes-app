@@ -1,13 +1,29 @@
 <script lang="ts" setup>
-import { useFolderStore } from '@/stores/folder'
+import { useNoteStore } from '@/stores/note'
 import { computed } from 'vue'
 
-const folderStore = useFolderStore()
-const folder = computed(() => folderStore.selectedFolder)
+const noteStore = useNoteStore()
+
+const notes = computed(() => noteStore.notes)
+const selectedNote = computed(() => noteStore.selectedNote)
 </script>
 
 <template>
-  <div class="notes-section">Notes {{ folder.id }}</div>
+  <div class="notes-section">
+    <ul class="notes-list">
+      <li
+        v-for="note in notes"
+        :key="note.id"
+        :class="{ active: selectedNote.id === note.id }"
+        @click="noteStore.selectNote(note)"
+      >
+        <div class="folder-left">
+          <i class="pi pi-folder-open"></i>
+          <p>{{ note.title }}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
 </template>
 
 <style scoped>

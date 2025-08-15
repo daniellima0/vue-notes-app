@@ -3,7 +3,6 @@ import { useStorage } from '@vueuse/core'
 import defaultData from '@/assets/default-data.json'
 
 const folders = useStorage<Folder[]>('folders', defaultData.folders)
-
 /**
  * Gets all folders.
  * @returns An array of folder.
@@ -30,7 +29,8 @@ export function createFolder(name: string): Folder {
   const folder: Folder = {
     id: crypto.randomUUID(),
     name,
-    notes: [],
+    created_at: new Date().toISOString(),
+    updated_at: new Date().toISOString(),
   }
   folders.value.push(folder)
   return folder
@@ -46,6 +46,7 @@ export function renameFolder(id: string, newName: string): Folder | undefined {
   const folderIndex = folders.value.findIndex((folder) => folder.id === id)
   if (folderIndex !== -1) {
     folders.value[folderIndex].name = newName
+    folders.value[folderIndex].updated_at = new Date().toISOString()
     return folders.value[folderIndex]
   } else {
     console.error(`Folder with ID ${id} not found.`)

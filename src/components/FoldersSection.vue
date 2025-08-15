@@ -1,17 +1,20 @@
 <script setup lang="ts">
-import { getFolders } from '@/services/folder-service'
 import { useFolderStore } from '@/stores/folder'
+import { useNoteStore } from '@/stores/note'
 import { computed } from 'vue'
 
-const folders = getFolders()
 const folderStore = useFolderStore()
+const noteStore = useNoteStore()
+
+const folders = computed(() => folderStore.folders)
 const selectedFolder = computed(() => folderStore.selectedFolder)
+const notes = computed(() => noteStore.notes)
 </script>
 
 <template>
   <div class="folders-section">
     <h2>Folders</h2>
-    <ul class="folder-list">
+    <ul class="folders-list">
       <li
         v-for="folder in folders"
         :key="folder.id"
@@ -22,7 +25,7 @@ const selectedFolder = computed(() => folderStore.selectedFolder)
           <i class="pi pi-folder-open"></i>
           <p>{{ folder.name }}</p>
         </div>
-        <p class="notes-amount">{{ folder.notes.length }}</p>
+        <p class="notes-amount">{{ notes.values.length }}</p>
       </li>
     </ul>
   </div>
@@ -46,7 +49,7 @@ h2 {
   padding: 0 0.5rem;
 }
 
-.folder-list {
+.folders-list {
   margin: 0;
   padding: 0;
   display: flex;

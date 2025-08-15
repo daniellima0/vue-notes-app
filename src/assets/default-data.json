@@ -3,92 +3,106 @@
     {
       "id": "f1a2b3c4-d5e6-7890-abcd-ef1234567890",
       "name": "Shopping",
-      "notes": [
-        {
-          "id": "n1a2b3c4-d5e6-7890-abcd-ef1234567890",
-          "title": "Grocery List",
-          "content": "# Grocery List\nHere are the items to buy: Milk, Eggs, Bread, Apples, and Bananas.",
-          "lastModifiedAt": "2024-06-05"
-        },
-        {
-          "id": "n2a2b3c4-d5e6-7890-abcd-ef1234567890",
-          "title": "Electronics",
-          "content": "# Electronics\nRemember to purchase a USB-C Cable, Wireless Mouse, and Power Bank.",
-          "lastModifiedAt": "2024-06-06"
-        },
-        {
-          "id": "n3a2b3c4-d5e6-7890-abcd-ef1234567890",
-          "title": "Clothing",
-          "content": "# Clothing\nShopping list: Jeans, T-shirts, and Sneakers for the season.",
-          "lastModifiedAt": "2024-06-07"
-        },
-        {
-          "id": "n4a2b3c4-d5e6-7890-abcd-ef1234567890",
-          "title": "Pharmacy",
-          "content": "# Pharmacy\nPick up Painkillers, Band-aids, and Vitamin C from the pharmacy.",
-          "lastModifiedAt": "2024-06-08"
-        },
-        {
-          "id": "n5a2b3c4-d5e6-7890-abcd-ef1234567890",
-          "title": "Home Supplies",
-          "content": "# Home Supplies\nDon't forget Detergent, Sponges, and Trash Bags for home cleaning.",
-          "lastModifiedAt": "2024-06-09"
-        }
-      ]
+      "created_at": "2024-06-01",
+      "updated_at": "2024-06-09"
     },
     {
       "id": "f2a2b3c4-d5e6-7890-abcd-ef1234567890",
       "name": "Watch List",
-      "notes": [
-        {
-          "id": "n6a2b3c4-d5e6-7890-abcd-ef1234567890",
-          "title": "Movies",
-          "content": "# Movies\nPlan to watch: Inception, Interstellar, and Parasite this week.",
-          "lastModifiedAt": "2024-06-10"
-        },
-        {
-          "id": "n7a2b3c4-d5e6-7890-abcd-ef1234567890",
-          "title": "TV Shows",
-          "content": "# TV Shows\nCatch up on Breaking Bad, The Office, and Stranger Things.",
-          "lastModifiedAt": "2024-06-11"
-        },
-        {
-          "id": "n8a2b3c4-d5e6-7890-abcd-ef1234567890",
-          "title": "Documentaries",
-          "content": "# Documentaries\nRecommended: Planet Earth and The Last Dance for insightful viewing.",
-          "lastModifiedAt": "2024-06-12"
-        },
-        {
-          "id": "n9a2b3c4-d5e6-7890-abcd-ef1234567890",
-          "title": "YouTube Channels",
-          "content": "# YouTube Channels\nWatch new videos from Veritasium, Kurzgesagt, and MKBHD.",
-          "lastModifiedAt": "2024-06-13"
-        }
-      ]
+      "created_at": "2024-06-02",
+      "updated_at": "2024-06-13"
     },
     {
       "id": "f3a2b3c4-d5e6-7890-abcd-ef1234567890",
       "name": "Quotes",
-      "notes": [
-        {
-          "id": "n10a2b3c4-d5e6-7890-abcd-ef1234567890",
-          "title": "Motivation",
-          "content": "# Motivation\n\"The only way to do great work is to love what you do.\" – Steve Jobs",
-          "lastModifiedAt": "2024-06-14"
-        },
-        {
-          "id": "n11a2b3c4-d5e6-7890-abcd-ef1234567890",
-          "title": "Wisdom",
-          "content": "# Wisdom\n\"In the middle of difficulty lies opportunity.\" – Albert Einstein",
-          "lastModifiedAt": "2024-06-15"
-        },
-        {
-          "id": "n12a2b3c4-d5e6-7890-abcd-ef1234567890",
-          "title": "Humor",
-          "content": "# Humor\n\"I'm not arguing, I'm just explaining why I'm right.\"",
-          "lastModifiedAt": "2024-06-16"
-        }
-      ]
+      "created_at": "2024-06-03",
+      "updated_at": "2024-06-16"
+    }
+  ],
+  "notes": [
+    {
+      "id": "n1a2b3c4-d5e6-7890-abcd-ef1234567890",
+      "folder_id": "f1a2b3c4-d5e6-7890-abcd-ef1234567890",
+      "title": "Grocery List",
+      "content": "# Grocery List\nHere are the items to buy: Milk, Eggs, Bread, Apples, and Bananas.",
+      "last_modified_at": "2024-06-05"
+    },
+    {
+      "id": "n2a2b3c4-d5e6-7890-abcd-ef1234567890",
+      "folder_id": "f1a2b3c4-d5e6-7890-abcd-ef1234567890",
+      "title": "Electronics",
+      "content": "# Electronics\nRemember to purchase a USB-C Cable, Wireless Mouse, and Power Bank.",
+      "last_modified_at": "2024-06-06"
+    },
+    {
+      "id": "n3a2b3c4-d5e6-7890-abcd-ef1234567890",
+      "folder_id": "f1a2b3c4-d5e6-7890-abcd-ef1234567890",
+      "title": "Clothing",
+      "content": "# Clothing\nShopping list: Jeans, T-shirts, and Sneakers for the season.",
+      "last_modified_at": "2024-06-07"
+    },
+    {
+      "id": "n4a2b3c4-d5e6-7890-abcd-ef1234567890",
+      "folder_id": "f1a2b3c4-d5e6-7890-abcd-ef1234567890",
+      "title": "Pharmacy",
+      "content": "# Pharmacy\nPick up Painkillers, Band-aids, and Vitamin C from the pharmacy.",
+      "last_modified_at": "2024-06-08"
+    },
+    {
+      "id": "n5a2b3c4-d5e6-7890-abcd-ef1234567890",
+      "folder_id": "f1a2b3c4-d5e6-7890-abcd-ef1234567890",
+      "title": "Home Supplies",
+      "content": "# Home Supplies\nDon't forget Detergent, Sponges, and Trash Bags for home cleaning.",
+      "last_modified_at": "2024-06-09"
+    },
+    {
+      "id": "n6a2b3c4-d5e6-7890-abcd-ef1234567890",
+      "folder_id": "f2a2b3c4-d5e6-7890-abcd-ef1234567890",
+      "title": "Movies",
+      "content": "# Movies\nPlan to watch: Inception, Interstellar, and Parasite this week.",
+      "last_modified_at": "2024-06-10"
+    },
+    {
+      "id": "n7a2b3c4-d5e6-7890-abcd-ef1234567890",
+      "folder_id": "f2a2b3c4-d5e6-7890-abcd-ef1234567890",
+      "title": "TV Shows",
+      "content": "# TV Shows\nCatch up on Breaking Bad, The Office, and Stranger Things.",
+      "last_modified_at": "2024-06-11"
+    },
+    {
+      "id": "n8a2b3c4-d5e6-7890-abcd-ef1234567890",
+      "folder_id": "f2a2b3c4-d5e6-7890-abcd-ef1234567890",
+      "title": "Documentaries",
+      "content": "# Documentaries\nRecommended: Planet Earth and The Last Dance for insightful viewing.",
+      "last_modified_at": "2024-06-12"
+    },
+    {
+      "id": "n9a2b3c4-d5e6-7890-abcd-ef1234567890",
+      "folder_id": "f2a2b3c4-d5e6-7890-abcd-ef1234567890",
+      "title": "YouTube Channels",
+      "content": "# YouTube Channels\nWatch new videos from Veritasium, Kurzgesagt, and MKBHD.",
+      "last_modified_at": "2024-06-13"
+    },
+    {
+      "id": "n10a2b3c4-d5e6-7890-abcd-ef1234567890",
+      "folder_id": "f3a2b3c4-d5e6-7890-abcd-ef1234567890",
+      "title": "Motivation",
+      "content": "# Motivation\n\"The only way to do great work is to love what you do.\" – Steve Jobs",
+      "last_modified_at": "2024-06-14"
+    },
+    {
+      "id": "n11a2b3c4-d5e6-7890-abcd-ef1234567890",
+      "folder_id": "f3a2b3c4-d5e6-7890-abcd-ef1234567890",
+      "title": "Wisdom",
+      "content": "# Wisdom\n\"In the middle of difficulty lies opportunity.\" – Albert Einstein",
+      "last_modified_at": "2024-06-15"
+    },
+    {
+      "id": "n12a2b3c4-d5e6-7890-abcd-ef1234567890",
+      "folder_id": "f3a2b3c4-d5e6-7890-abcd-ef1234567890",
+      "title": "Humor",
+      "content": "# Humor\n\"I'm not arguing, I'm just explaining why I'm right.\"",
+      "last_modified_at": "2024-06-16"
     }
   ]
 }

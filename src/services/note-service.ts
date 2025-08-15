@@ -1,93 +1,73 @@
 import type { Folder, Note } from '@/types/types'
+import { useStorage } from '@vueuse/core'
+import defaultData from '@/assets/default-data.json'
 import { getFolderById } from './folder-service'
+
+const notesStorage = useStorage<Note[]>('notes', defaultData.notes)
 
 /**
  * Gets all notes in a specific folder.
- * @param folderId - The ID of the folder to retrieve notes from.
- * @returns An array of notes in the specified folder or undefined if the folder does not exist.
  */
-export function getNotesInFolder(folderId: string): Note[] | undefined {
-  const folder = getFolderById(folderId)
-  return folder ? folder.notes : undefined
+export function getNotesInFolder(folderId: string): Note[] {
+  return notesStorage.value.filter((note) => note.folder_id === folderId)
 }
 
 /**
- * Gets a note by its ID within a specific folder.
- * @param folderId - The ID of the folder containing the note.
- * @param noteId - The ID of the note to retrieve.
- * @returns The note object if found, otherwise undefined.
+ * Gets a note by its ID.
  */
-export function getNoteById(folderId: string, noteId: string): Note | undefined {
-  const notes = getNotesInFolder(folderId)
-  return notes ? notes.find((note) => note.id === noteId) : undefined
+export function getNoteById(noteId: string): Note | undefined {
+  return notesStorage.value.find((note) => note.id === noteId)
 }
 
 /**
- * Adds a new note to a specific folder.
- * @param folderId - The ID of the folder to add the note to.
- * @param title - The title of the new note.
- * @param content - The content of the new note.
- * @returns The created note object or undefined if the folder does not exist.
+ * Adds a new note associated with a folder.
  */
 export function addNoteToFolder(
   folderId: string,
   title: string,
   content: string,
 ): Note | undefined {
-  const note: Note = {
-    id: crypto.randomUUID(),
-    title,
-    content,
-    lastModifiedAt: new Date().toISOString(),
-  }
   const folder = getFolderById(folderId)
   if (!folder) {
     console.error(`Folder with ID ${folderId} not found.`)
     return
   }
-  folder.notes.push(note)
+
+  const note: Note = {
+    id: crypto.randomUUID(),
+    folder_id: folderId,
+    title,
+    content,
+    last_modified_at: new Date().toISOString(),
+  }
+
+  notesStorage.value.push(note)
   return note
 }
 
 /**
- * Removes a note from a specific folder.
- * @param folderId - The ID of the folder containing the note.
- * @param noteId - The ID of the note to remove.
- * @returns The updated folder object or undefined if the folder does not exist.
+ * Removes a note by its ID.
  */
-export function removeNoteFromFolder(folderId: string, noteId: string): Folder | undefined {
-  const folder = getFolderById(folderId)
-  if (!folder) {
-    console.error(`Folder with ID ${folderId} not found.`)
+export function removeNote(noteId: string): Note | undefined {
+  const index = notesStorage.value.findIndex((n) => n.id === noteId)
+  if (index === -1) {
+    console.error(`Note with ID ${noteId} not found.`)
     return
   }
-  folder.notes = folder.notes.filter((note) => note.id !== noteId)
-  return folder
+  const [removed] = notesStorage.value.splice(index, 1)
+  return removed
 }
 
 /**
- * Renames a note in a specific folder.
- * @param folderId - The ID of the folder containing the note.
- * @param noteId - The ID of the note to rename.
- * @param newTitle - The new title for the note.
- * @returns The updated note object if found, otherwise undefined.
+ * Renames a note.
  */
-export function renameNoteInFolder(
-  folderId: string,
-  noteId: string,
-  newTitle: string,
-): Note | undefined {
-  const folder = getFolderById(folderId)
-  if (!folder) {
-    console.error(`Folder with ID ${folderId} not found.`)
+export function renameNote(noteId: string, newTitle: string): Note | undefined {
+  const note = getNoteById(noteId)
+  if (!note) {
+    console.error(`Note with ID ${noteId} not found.`)
     return
   }
-
-  const noteIndex = folder.notes.findIndex((note) => note.id === noteId)
-  if (noteIndex == -1) {
-    console.error(`Note with ID ${noteId} not found in folder ${folderId}.`)
-  }
-  folder.notes[noteIndex].title = newTitle
-  folder.notes[noteIndex].lastModifiedAt = new Date().toISOString()
-  return folder.notes[noteIndex]
+  note.title = newTitle
+  note.last_modified_at = new Date().toISOString()
+  return note
 }
