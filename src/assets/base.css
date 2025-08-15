@@ -1,14 +1,22 @@
+/* color palette */
+:root {
+  --yellow: rgb(132, 107, 130);
+  --dark-yellow: oklch(79.5% 0.184 86.047);
+}
+
+/* semantic color variables for this project */
 :root {
   --color-background-white: '#ffffff';
   --color-background-gray: oklch(96.7% 0.003 264.542);
-  --color-background-active: oklch(92.8% 0.006 264.531);
+  --color-background-folder-active: oklch(92.8% 0.006 264.531);
+  --color-background-note-active: var(--dark-yellow);
 
   --color-border: oklch(87.2% 0.01 258.338);
 
   --color-text-black: oklch(27.8% 0.033 256.848);
   --color-text-gray: oklch(55.1% 0.027 264.364);
 
-  --color-yellow: oklch(79.5% 0.184 86.047);
+  --color-yellow: var(--dark-yellow);
 
   /* add other css variables here (not necessarily colors) */
   /* --section-gap: 160px; */
@@ -46,4 +54,12 @@ body {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
 }

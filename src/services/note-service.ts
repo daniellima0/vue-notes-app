@@ -1,7 +1,10 @@
 import type { Folder, Note } from '@/types/types'
 import { useStorage } from '@vueuse/core'
 import defaultData from '@/assets/default-data.json'
-import { getFolderById } from './folder-service'
+import useFolders from './folder-service'
+
+//TODO: Change this to use computed, so every time the localStorage changes, the UI changes too
+//TODO: Encapsulate methods in a composition
 
 const notesStorage = useStorage<Note[]>('notes', defaultData.notes)
 
@@ -27,7 +30,8 @@ export function addNoteToFolder(
   title: string,
   content: string,
 ): Note | undefined {
-  const folder = getFolderById(folderId)
+  const folders = useFolders()
+  const folder = folders.getFolderById(folderId)
   if (!folder) {
     console.error(`Folder with ID ${folderId} not found.`)
     return

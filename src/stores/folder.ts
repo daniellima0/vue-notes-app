@@ -1,15 +1,14 @@
 import type { Folder } from '@/types/types'
 import { defineStore } from 'pinia'
-import { getFolders } from '@/services/folder-service'
+import useFolders from '@/services/folder-service'
 import { ref } from 'vue'
 
 export const useFolderStore = defineStore('folder', () => {
-  const folders = ref(getFolders())
-  const selectedFolder = ref({} as Folder)
+  const { folders, getFolderById, selectedFolder, loading } = useFolders()
 
-  function selectFolder(folder: Folder) {
-    selectedFolder.value = folder
+  function selectFolder(id: string) {
+    getFolderById(id)
   }
 
-  return { folders, selectedFolder, selectFolder }
+  return { folders, selectedFolder, selectFolder, loading }
 })

@@ -21,7 +21,7 @@ function getFolderNoteCount(folderId: string) {
         v-for="folder in folders"
         :key="folder.id"
         :class="{ active: selectedFolder.id === folder.id }"
-        @click="folderStore.selectFolder(folder)"
+        @click="folderStore.selectFolder(folder.id)"
       >
         <div class="folder-left">
           <i class="pi pi-folder-open"></i>
@@ -53,8 +53,6 @@ h2 {
 }
 
 .folders-list {
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: column;
   gap: 0.1rem;
@@ -64,14 +62,13 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  list-style: none;
   border-radius: 0.3rem;
   padding: 0.5rem 0.5rem;
   cursor: default;
 }
 
 .active {
-  background-color: var(--color-background-active);
+  background-color: var(--color-background-folder-active);
 }
 
 .folder-left {
