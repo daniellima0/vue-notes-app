@@ -1,5 +1,13 @@
+<script lang="ts" setup>
+import { useFolderStore } from '@/stores/folder'
+import { computed } from 'vue'
+
+const folderStore = useFolderStore()
+const folder = computed(() => folderStore.selectedFolder)
+</script>
+
 <template>
-  <div class="notes-section">Notes</div>
+  <div class="notes-section">Notes {{ folder.id }}</div>
 </template>
 
 <style scoped>
