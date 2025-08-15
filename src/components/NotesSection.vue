@@ -4,7 +4,7 @@ import { computed } from 'vue'
 
 const noteStore = useNoteStore()
 
-const notes = computed(() => noteStore.notes)
+const notes = computed(() => noteStore.selectedFolderNotes)
 const selectedNote = computed(() => noteStore.selectedNote)
 </script>
 
@@ -17,8 +17,7 @@ const selectedNote = computed(() => noteStore.selectedNote)
         :class="{ active: selectedNote.id === note.id }"
         @click="noteStore.selectNote(note)"
       >
-        <div class="folder-left">
-          <i class="pi pi-folder-open"></i>
+        <div class="note">
           <p>{{ note.title }}</p>
         </div>
       </li>
